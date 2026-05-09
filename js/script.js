@@ -203,57 +203,79 @@
   }
 
   /* =========================================================
-     PDF DOWNLOAD (English / Odia) with auto filename
+     PDF DOWNLOAD (direct download via html2pdf, no print dialog)
      ========================================================= */
 
   /**
-   * Browsers use document.title as the suggested PDF filename
-   * when "Save as PDF" is chosen in the print dialog. We temporarily
-   * swap the title to a clean "BIODATA_*" name, switch language if
-   * needed, trigger window.print(), then restore everything afterwards.
+   * Wire the single Download button to generate and save a PDF
+   * automatically — no native print dialog, no extra confirmation.
+   * Filename is always BIODATA_Itishree_Lenka.pdf (with _Odia suffix
+   * if the user is currently viewing in Odia).
    */
   function initDownloadButtons() {
-    var items = document.querySelectorAll("[data-pdf-lang]");
-    items.forEach(function (item) {
-      item.addEventListener("click", function (ev) {
-        ev.preventDefault();
-        var lang = item.getAttribute("data-pdf-lang");
-        if (SUPPORTED.indexOf(lang) < 0) return;
-        downloadPdf(lang);
-      });
+    var btn = document.getElementById("downloadBtn");
+    if (!btn) return;
+    btn.addEventListener("click", function (ev) {
+      ev.preventDefault();
+      downloadPdf(btn);
     });
   }
 
-  function downloadPdf(lang) {
-    var prevLang = state.currentLang;
-    var prevTitle = document.title;
-    var pdfName = lang === "or"
-      ? "BIODATA_Itishree_Lenka_Odia"
-      : "BIODATA_Itishree_Lenka";
+  function downloadPdf(btn) {
+    var fileName = state.currentLang === "or"
+      ? "BIODATA_Itishree_Lenka_Odia.pdf"
+      : "BIODATA_Itishree_Lenka.pdf";
 
-    var changed = (prevLang !== lang);
-    if (changed) applyLanguage(lang);
-
-    document.title = pdfName;
-
-    var restored = false;
-    function restore() {
-      if (restored) return;
-      restored = true;
-      document.title = prevTitle;
-      if (changed) applyLanguage(prevLang);
-      window.removeEventListener("afterprint", restore);
+    if (typeof window.html2pdf === "undefined") {
+      window.print();
+      return;
     }
-    window.addEventListener("afterprint", restore);
-    window.setTimeout(restore, 60000);
 
-    window.setTimeout(function () {
-      try {
+    var target = document.querySelector(".portfolio-wrapper .container");
+    if (!target) return;
+
+    var originalHtml = btn.innerHTML;
+    btn.disabled = true;
+    btn.classList.add("is-loading");
+    btn.innerHTML =
+      '<span class="spinner-border spinner-border-sm" aria-hidden="true"></span>' +
+      '<span>' + (state.currentLang === "or" ? "ତିଆରି ହେଉଛି…" : "Preparing…") + '</span>';
+
+    var opts = {
+      margin:      [8, 6, 8, 6],
+      filename:    fileName,
+      image:       { type: "jpeg", quality: 0.98 },
+      html2canvas: {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: "#fffdf8",
+        logging: false,
+        windowWidth: target.scrollWidth
+      },
+      jsPDF:       { unit: "mm", format: "a4", orientation: "portrait", compress: true },
+      pagebreak:   { mode: ["avoid-all", "css", "legacy"] }
+    };
+
+    function restoreBtn() {
+      btn.disabled = false;
+      btn.classList.remove("is-loading");
+      btn.innerHTML = originalHtml;
+    }
+
+    var fontsReady = (document.fonts && document.fonts.ready)
+      ? document.fonts.ready
+      : Promise.resolve();
+
+    fontsReady
+      .then(function () {
+        return window.html2pdf().set(opts).from(target).save();
+      })
+      .then(restoreBtn)
+      .catch(function (err) {
+        console.error("PDF generation failed:", err);
+        restoreBtn();
         window.print();
-      } catch (e) {
-        restore();
-      }
-    }, 350);
+      });
   }
 
   /* =========================================================
