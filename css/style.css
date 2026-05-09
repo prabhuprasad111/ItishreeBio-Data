@@ -667,9 +667,18 @@ a:hover { color: var(--color-gold-dark); }
 }
 
 @media (max-width: 575.98px) {
+  .photo-frame {
+    display: block;
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .photo-slider {
-    width: 100%;
-    height: auto;
+    width: min(75vw, 280px);
+    height: calc(min(75vw, 280px) * 4 / 3);
+    max-height: 360px;
     aspect-ratio: 3/4;
   }
 }
