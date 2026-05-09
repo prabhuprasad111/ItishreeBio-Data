@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marriage Portfolio | Itishree Lenka</title>
+  <title data-en="Itishree Portfolio" data-or="ଇତିଶ୍ରୀ ପୋର୍ଟଫୋଲିଓ">Itishree Portfolio</title>
   <meta name="description" content="Marriage Portfolio of Itishree Lenka" />
 
   <!-- Bootstrap 5 CSS -->
@@ -18,11 +18,11 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
   />
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts (English + Odia) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Great+Vibes&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Great+Vibes&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&family=Noto+Sans+Oriya:wght@400;500;600;700&family=Noto+Serif+Oriya:wght@500;600;700&display=swap"
     rel="stylesheet"
   />
 
@@ -35,9 +35,20 @@
 
   <!-- Action bar (hidden in print) -->
   <div class="action-bar no-print">
-    <button id="printBtn" class="btn btn-action" type="button" title="Print / Save as PDF">
+    <div class="lang-toggle" role="group" aria-label="Language switcher">
+      <button type="button" class="lang-btn active" data-lang="en">English</button>
+      <button type="button" class="lang-btn" data-lang="or">ଓଡ଼ିଆ</button>
+    </div>
+    <button
+      id="printBtn"
+      class="btn btn-action"
+      type="button"
+      data-en-title="Print / Save as PDF"
+      data-or-title="ପ୍ରିଣ୍ଟ / PDF ଭାବେ ସଞ୍ଚୟ କରନ୍ତୁ"
+      title="Print / Save as PDF"
+    >
       <i class="bi bi-printer-fill"></i>
-      <span>Print / Save PDF</span>
+      <span data-en="Print / Save PDF" data-or="ପ୍ରିଣ୍ଟ / PDF">Print / Save PDF</span>
     </button>
   </div>
 
@@ -45,15 +56,21 @@
     <div class="container">
       <!-- ============ HERO / COVER ============ -->
       <section class="hero-section text-center">
-        <div class="hero-icon">
-          <i class="bi bi-suit-heart-fill"></i>
+        <div class="hero-ganesha" aria-hidden="true">
+          <img src="images/ganesha.png" alt="Lord Ganesha" />
         </div>
-        <p class="hero-pretitle">Shree Ganeshay Namah</p>
-        <h1 class="hero-title">Marriage Portfolio</h1>
+        <p class="hero-pretitle"
+           data-en="Omm Shree Ganeshaya Namah"
+           data-or="ଓଁ ଶ୍ରୀ ଗଣେଶାୟ ନମଃ">Omm Shree Ganeshaya Namah</p>
+        <h1 class="hero-title"
+            data-en="Itishree Portfolio"
+            data-or="ଇତିଶ୍ରୀ ପୋର୍ଟଫୋଲିଓ">Itishree Portfolio</h1>
         <div class="divider">
           <span class="divider-icon"><i class="bi bi-flower1"></i></span>
         </div>
-        <p class="hero-subtitle">A Sacred Beginning of a Lifelong Journey</p>
+        <p class="hero-subtitle"
+           data-en="A Sacred Beginning of a Lifelong Journey"
+           data-or="ଜୀବନର ଏକ ପବିତ୍ର ଯାତ୍ରାର ଶୁଭ ଆରମ୍ଭ">A Sacred Beginning of a Lifelong Journey</p>
       </section>
 
       <!-- ============ PROFILE CARD ============ -->
@@ -75,16 +92,31 @@
             </div>
           </div>
           <div class="col-lg-7 text-center text-lg-start">
-            <p class="name-prefix">Introducing</p>
-            <h2 class="profile-name">Itishree Lenka</h2>
+            <p class="name-prefix"
+               data-en="Introducing"
+               data-or="ପରିଚୟ">Introducing</p>
+            <h2 class="profile-name"
+                data-en="Itishree Lenka"
+                data-or="ଇତିଶ୍ରୀ ଲେଙ୍କା">Itishree Lenka</h2>
             <div class="name-underline"></div>
-            <p class="profile-tagline">
-              "May this sacred bond be blessed with love, trust, and togetherness."
+            <p class="profile-tagline"
+               data-en="&ldquo;May this sacred bond be blessed with love, trust, and togetherness.&rdquo;"
+               data-or="&ldquo;ଏହି ପବିତ୍ର ବନ୍ଧନ ପ୍ରେମ, ବିଶ୍ୱାସ ଓ ଏକତାରେ ଆଶୀର୍ବାଦିତ ହେଉ।&rdquo;">
+              &ldquo;May this sacred bond be blessed with love, trust, and togetherness.&rdquo;
             </p>
             <div class="quick-info d-flex flex-wrap justify-content-center justify-content-lg-start gap-2 mt-3">
-              <span class="quick-pill"><i class="bi bi-calendar-heart"></i> 18 June 1996</span>
-              <span class="quick-pill"><i class="bi bi-geo-alt"></i> Jagatsinghpur</span>
-              <span class="quick-pill"><i class="bi bi-mortarboard"></i> Sci. Graduate, PGDCA</span>
+              <span class="quick-pill">
+                <i class="bi bi-calendar-heart"></i>
+                <span data-en="18 June 1996" data-or="୧୮ ଜୁନ ୧୯୯୬">18 June 1996</span>
+              </span>
+              <span class="quick-pill">
+                <i class="bi bi-geo-alt"></i>
+                <span data-en="Jagatsinghpur" data-or="ଜଗତସିଂହପୁର">Jagatsinghpur</span>
+              </span>
+              <span class="quick-pill">
+                <i class="bi bi-mortarboard"></i>
+                <span data-en="Sci. Graduate, PGDCA" data-or="ବିଜ୍ଞାନ ସ୍ନାତକ, PGDCA">Sci. Graduate, PGDCA</span>
+              </span>
             </div>
           </div>
         </div>
@@ -97,44 +129,74 @@
           <div class="detail-card h-100">
             <div class="detail-card-header">
               <span class="detail-card-icon"><i class="bi bi-person-vcard-fill"></i></span>
-              <h3>Profile Details</h3>
+              <h3 data-en="Profile Details" data-or="ପ୍ରୋଫାଇଲ ବିବରଣୀ">Profile Details</h3>
             </div>
             <ul class="detail-list">
               <li>
-                <span class="label"><i class="bi bi-person-fill"></i> Name</span>
-                <span class="value">Itishree Lenka</span>
+                <span class="label">
+                  <i class="bi bi-person-fill"></i>
+                  <span data-en="Name" data-or="ନାମ">Name</span>
+                </span>
+                <span class="value" data-en="Itishree Lenka" data-or="ଇତିଶ୍ରୀ ଲେଙ୍କା">Itishree Lenka</span>
               </li>
               <li>
-                <span class="label"><i class="bi bi-calendar-event-fill"></i> Date of Birth</span>
-                <span class="value">18<sup>th</sup> June 1996</span>
+                <span class="label">
+                  <i class="bi bi-calendar-event-fill"></i>
+                  <span data-en="Date of Birth" data-or="ଜନ୍ମ ତାରିଖ">Date of Birth</span>
+                </span>
+                <span class="value"
+                      data-en="18<sup>th</sup> June 1996"
+                      data-or="୧୮ ଜୁନ ୧୯୯୬"
+                      data-html="true">18<sup>th</sup> June 1996</span>
               </li>
               <li>
-                <span class="label"><i class="bi bi-stars"></i> Religion</span>
-                <span class="value">Hindu</span>
+                <span class="label">
+                  <i class="bi bi-stars"></i>
+                  <span data-en="Religion" data-or="ଧର୍ମ">Religion</span>
+                </span>
+                <span class="value" data-en="Hindu" data-or="ହିନ୍ଦୁ">Hindu</span>
               </li>
               <li>
-                <span class="label"><i class="bi bi-bookmark-star-fill"></i> Caste</span>
-                <span class="value">Khandayata</span>
+                <span class="label">
+                  <i class="bi bi-bookmark-star-fill"></i>
+                  <span data-en="Caste" data-or="ଜାତି">Caste</span>
+                </span>
+                <span class="value" data-en="Khandayata" data-or="ଖଣ୍ଡାୟତ">Khandayata</span>
               </li>
               <li>
-                <span class="label"><i class="bi bi-flower2"></i> Gotra</span>
-                <span class="value">Nagashya</span>
+                <span class="label">
+                  <i class="bi bi-flower2"></i>
+                  <span data-en="Gotra" data-or="ଗୋତ୍ର">Gotra</span>
+                </span>
+                <span class="value" data-en="Nagashya" data-or="ନାଗଶ୍ୟ">Nagashya</span>
               </li>
               <li>
-                <span class="label"><i class="bi bi-rulers"></i> Height</span>
-                <span class="value">5'3"</span>
+                <span class="label">
+                  <i class="bi bi-rulers"></i>
+                  <span data-en="Height" data-or="ଉଚ୍ଚତା">Height</span>
+                </span>
+                <span class="value" data-en="5'3&quot;" data-or="୫'୩&quot;">5'3"</span>
               </li>
               <li>
-                <span class="label"><i class="bi bi-droplet-fill"></i> Blood Group</span>
+                <span class="label">
+                  <i class="bi bi-droplet-fill"></i>
+                  <span data-en="Blood Group" data-or="ରକ୍ତ ଗ୍ରୁପ">Blood Group</span>
+                </span>
                 <span class="value">B+</span>
               </li>
               <li>
-                <span class="label"><i class="bi bi-palette-fill"></i> Complexion</span>
-                <span class="value">Fair</span>
+                <span class="label">
+                  <i class="bi bi-palette-fill"></i>
+                  <span data-en="Complexion" data-or="ବର୍ଣ୍ଣ">Complexion</span>
+                </span>
+                <span class="value" data-en="Fair" data-or="ଗୋରା">Fair</span>
               </li>
               <li>
-                <span class="label"><i class="bi bi-mortarboard-fill"></i> Education</span>
-                <span class="value">Science Graduate, PGDCA</span>
+                <span class="label">
+                  <i class="bi bi-mortarboard-fill"></i>
+                  <span data-en="Education" data-or="ଶିକ୍ଷା">Education</span>
+                </span>
+                <span class="value" data-en="Science Graduate, PGDCA" data-or="ବିଜ୍ଞାନ ସ୍ନାତକ, PGDCA">Science Graduate, PGDCA</span>
               </li>
             </ul>
           </div>
@@ -145,33 +207,52 @@
           <div class="detail-card h-100">
             <div class="detail-card-header">
               <span class="detail-card-icon"><i class="bi bi-house-heart-fill"></i></span>
-              <h3>Family Details</h3>
+              <h3 data-en="Family Details" data-or="ପରିବାର ବିବରଣୀ">Family Details</h3>
             </div>
             <ul class="detail-list">
               <li>
-                <span class="label"><i class="bi bi-person-badge-fill"></i> Father's Name</span>
-                <span class="value">Late Pradeep Kumar Lenka</span>
+                <span class="label">
+                  <i class="bi bi-person-badge-fill"></i>
+                  <span data-en="Father's Name" data-or="ପିତାଙ୍କ ନାମ">Father's Name</span>
+                </span>
+                <span class="value" data-en="Late Pradeep Kumar Lenka" data-or="ସ୍ୱର୍ଗତ ପ୍ରଦୀପ କୁମାର ଲେଙ୍କା">Late Pradeep Kumar Lenka</span>
               </li>
               <li>
-                <span class="label"><i class="bi bi-person-heart"></i> Mother's Name</span>
-                <span class="value">Pranati Lenka</span>
+                <span class="label">
+                  <i class="bi bi-person-heart"></i>
+                  <span data-en="Mother's Name" data-or="ମାତାଙ୍କ ନାମ">Mother's Name</span>
+                </span>
+                <span class="value" data-en="Pranati Lenka" data-or="ପ୍ରଣତି ଲେଙ୍କା">Pranati Lenka</span>
               </li>
               <li>
-                <span class="label"><i class="bi bi-people-fill"></i> Sisters (Married)</span>
-                <span class="value">Padmini Swain &amp; Padmalaya Lenka</span>
+                <span class="label">
+                  <i class="bi bi-people-fill"></i>
+                  <span data-en="Sisters (Married)" data-or="ଭଉଣୀ (ବିବାହିତ)">Sisters (Married)</span>
+                </span>
+                <span class="value"
+                      data-en="Padmini Swain &amp; Padmalaya Lenka"
+                      data-or="ପଦ୍ମିନୀ ସ୍ୱାଇଁ ଓ ପଦ୍ମାଳୟା ଲେଙ୍କା"
+                      data-html="true">Padmini Swain &amp; Padmalaya Lenka</span>
               </li>
               <li>
-                <span class="label"><i class="bi bi-person-arms-up"></i> Brother</span>
-                <span class="value">Prabhu Prasad Lenka</span>
+                <span class="label">
+                  <i class="bi bi-person-arms-up"></i>
+                  <span data-en="Brother" data-or="ଭାଇ">Brother</span>
+                </span>
+                <span class="value" data-en="Prabhu Prasad Lenka" data-or="ପ୍ରଭୁ ପ୍ରସାଦ ଲେଙ୍କା">Prabhu Prasad Lenka</span>
               </li>
             </ul>
 
             <!-- Expectations inside same card for symmetry -->
             <div class="expectations-block">
               <h4 class="expectations-title">
-                <i class="bi bi-heart-fill"></i> Expectations
+                <i class="bi bi-heart-fill"></i>
+                <span data-en="Expectations" data-or="ଅପେକ୍ଷା">Expectations</span>
               </h4>
-              <p class="expectations-text">
+              <p class="expectations-text"
+                 data-en="Looking for a <strong>well educated</strong>, <strong>caring</strong>, and <strong>family-oriented</strong> life partner who values relationships, traditions, and togetherness."
+                 data-or="ଜଣେ <strong>ସୁଶିକ୍ଷିତ</strong>, <strong>ଯତ୍ନଶୀଳ</strong> ଏବଂ <strong>ପରିବାର-ମୁଖୀ</strong> ଜୀବନ ସାଥୀଙ୍କ ଅନ୍ୱେଷଣରେ — ଯିଏ ସମ୍ପର୍କ, ପରମ୍ପରା ଓ ଏକତାକୁ ମୂଲ୍ୟ ଦିଅନ୍ତି।"
+                 data-html="true">
                 Looking for a <strong>well educated</strong>, <strong>caring</strong>,
                 and <strong>family-oriented</strong> life partner who values
                 relationships, traditions, and togetherness.
@@ -187,24 +268,29 @@
           <div class="col-md-7">
             <div class="contact-header">
               <span class="detail-card-icon"><i class="bi bi-telephone-fill"></i></span>
-              <h3>Contact Details</h3>
+              <h3 data-en="Contact Details" data-or="ଯୋଗାଯୋଗ ବିବରଣୀ">Contact Details</h3>
             </div>
             <div class="contact-item">
               <span class="contact-icon"><i class="bi bi-geo-alt-fill"></i></span>
               <div>
-                <p class="contact-label">Address</p>
-                <p class="contact-value">
-                  At – Kothi, PO – Nimol, PS – Erasama,<br />
-                  Dist – Jagatsinghpur, Pin – 754138, Odisha
+                <p class="contact-label" data-en="Address" data-or="ଠିକଣା">Address</p>
+                <p class="contact-value"
+                   data-en="At &ndash; Kothi, PO &ndash; Nimol, PS &ndash; Erasama,<br />Dist &ndash; Jagatsinghpur, Pin &ndash; 754138, Odisha"
+                   data-or="ଗ୍ରାମ – କୋଠି, ଡାକଘର – ନିମୋଳ, ଥାନା – ଏରସମା,<br />ଜିଲ୍ଲା – ଜଗତସିଂହପୁର, ପିନ – ୭୫୪୧୩୮, ଓଡ଼ିଶା"
+                   data-html="true">
+                  At &ndash; Kothi, PO &ndash; Nimol, PS &ndash; Erasama,<br />
+                  Dist &ndash; Jagatsinghpur, Pin &ndash; 754138, Odisha
                 </p>
               </div>
             </div>
             <div class="contact-item">
               <span class="contact-icon"><i class="bi bi-phone-fill"></i></span>
               <div>
-                <p class="contact-label">Mobile Number</p>
+                <p class="contact-label" data-en="Mobile Number" data-or="ମୋବାଇଲ ନମ୍ବର">Mobile Number</p>
                 <p class="contact-value">
-                  <a href="tel:+917008344247">+91 70083 44247</a>
+                  <a href="tel:+917008344247"
+                     data-en="+91 70083 44247"
+                     data-or="+୯୧ ୭୦୦୮୩ ୪୪୨୪୭">+91 70083 44247</a>
                 </p>
               </div>
             </div>
@@ -212,8 +298,11 @@
           <div class="col-md-5 text-center">
             <div class="blessing-box">
               <i class="bi bi-flower1 blessing-flower"></i>
-              <p class="blessing-text">
-                "Two souls, one journey.<br />May love light the way."
+              <p class="blessing-text"
+                 data-en="&ldquo;Two souls, one journey.<br />May love light the way.&rdquo;"
+                 data-or="&ldquo;ଦୁଇ ଆତ୍ମା, ଏକ ଯାତ୍ରା।<br />ପ୍ରେମ ପଥ ଆଲୋକିତ କରୁ।&rdquo;"
+                 data-html="true">
+                &ldquo;Two souls, one journey.<br />May love light the way.&rdquo;
               </p>
               <i class="bi bi-flower1 blessing-flower"></i>
             </div>
@@ -226,10 +315,15 @@
         <div class="divider">
           <span class="divider-icon"><i class="bi bi-suit-heart-fill"></i></span>
         </div>
-        <p class="footer-text">
+        <p class="footer-text"
+           data-en="With Blessings of Family &amp; Elders"
+           data-or="ପରିବାର ଓ ଗୁରୁଜନଙ୍କ ଆଶୀର୍ବାଦ ସହିତ"
+           data-html="true">
           With Blessings of Family &amp; Elders
         </p>
-        <p class="footer-sub">॥ Om Shree Ganeshay Namah ॥</p>
+        <p class="footer-sub"
+           data-en="॥ Omm Shree Ganeshaya Namah ॥"
+           data-or="॥ ଓଁ ଶ୍ରୀ ଗଣେଶାୟ ନମଃ ॥">॥ Omm Shree Ganeshaya Namah ॥</p>
       </footer>
     </div>
   </main>
