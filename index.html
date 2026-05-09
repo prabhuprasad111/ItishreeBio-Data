@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-en="Itishree Portfolio" data-or="ଇତିଶ୍ରୀ ପୋର୍ଟଫୋଲିଓ">Itishree Portfolio</title>
+  <title data-en="Subha Sambandha | Itishree Lenka" data-or="ଶୁଭ ସମ୍ବନ୍ଧ | ଇତିଶ୍ରୀ ଲେଙ୍କା">Subha Sambandha | Itishree Lenka</title>
   <meta name="description" content="Marriage Portfolio of Itishree Lenka" />
 
   <!-- Bootstrap 5 CSS -->
@@ -30,6 +30,43 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <!-- ============ SPLASH / OPENING ANIMATION ============ -->
+  <div id="splash" class="splash" aria-hidden="true">
+    <!-- Decorative falling petals -->
+    <div class="splash-petals" aria-hidden="true">
+      <span class="petal p1"></span>
+      <span class="petal p2"></span>
+      <span class="petal p3"></span>
+      <span class="petal p4"></span>
+      <span class="petal p5"></span>
+      <span class="petal p6"></span>
+      <span class="petal p7"></span>
+      <span class="petal p8"></span>
+      <span class="petal p9"></span>
+      <span class="petal p10"></span>
+    </div>
+
+    <!-- Stage with Ganesha + mantra (centered) -->
+    <div class="splash-stage">
+      <div class="splash-aura"></div>
+      <div class="splash-ganesha">
+        <img src="images/ganesha.png" alt="" />
+      </div>
+      <p class="splash-mantra">॥ ॐ श्री गणेशाय नमः ॥</p>
+      <p class="splash-mantra-en">Omm Shree Ganeshaya Namah</p>
+      <h2 class="splash-title">Subha Sambandha</h2>
+      <p class="splash-subtitle">An Auspicious Bond</p>
+    </div>
+
+    <!-- Gold curtains that part to reveal -->
+    <div class="splash-curtain splash-curtain-left"></div>
+    <div class="splash-curtain splash-curtain-right"></div>
+
+    <button id="splashSkip" class="splash-skip" type="button" aria-label="Skip intro">
+      Skip <i class="bi bi-skip-end-fill"></i>
+    </button>
+  </div>
+
   <!-- Decorative top border -->
   <div class="ornament-top" aria-hidden="true"></div>
 
@@ -39,17 +76,37 @@
       <button type="button" class="lang-btn active" data-lang="en">English</button>
       <button type="button" class="lang-btn" data-lang="or">ଓଡ଼ିଆ</button>
     </div>
-    <button
-      id="printBtn"
-      class="btn btn-action"
-      type="button"
-      data-en-title="Print / Save as PDF"
-      data-or-title="ପ୍ରିଣ୍ଟ / PDF ଭାବେ ସଞ୍ଚୟ କରନ୍ତୁ"
-      title="Print / Save as PDF"
-    >
-      <i class="bi bi-printer-fill"></i>
-      <span data-en="Print / Save PDF" data-or="ପ୍ରିଣ୍ଟ / PDF">Print / Save PDF</span>
-    </button>
+
+    <!-- Download dropdown -->
+    <div class="dropdown">
+      <button
+        class="btn btn-action dropdown-toggle"
+        type="button"
+        id="downloadDropdown"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        data-en-title="Download Biodata as PDF"
+        data-or-title="ବାୟୋଡାଟା PDF ଡାଉନଲୋଡ କରନ୍ତୁ"
+        title="Download Biodata as PDF"
+      >
+        <i class="bi bi-download"></i>
+        <span data-en="Download" data-or="ଡାଉନଲୋଡ">Download</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end download-menu" aria-labelledby="downloadDropdown">
+        <li>
+          <button class="dropdown-item" type="button" data-pdf-lang="en">
+            <i class="bi bi-file-earmark-pdf-fill"></i>
+            <span data-en="English Biodata (PDF)" data-or="ଇଂରାଜୀ ବାୟୋଡାଟା (PDF)">English Biodata (PDF)</span>
+          </button>
+        </li>
+        <li>
+          <button class="dropdown-item" type="button" data-pdf-lang="or">
+            <i class="bi bi-file-earmark-pdf-fill"></i>
+            <span data-en="Odia Biodata (PDF)" data-or="ଓଡ଼ିଆ ବାୟୋଡାଟା (PDF)">Odia Biodata (PDF)</span>
+          </button>
+        </li>
+      </ul>
+    </div>
   </div>
 
   <main class="portfolio-wrapper">
@@ -63,14 +120,14 @@
            data-en="Omm Shree Ganeshaya Namah"
            data-or="ଓଁ ଶ୍ରୀ ଗଣେଶାୟ ନମଃ">Omm Shree Ganeshaya Namah</p>
         <h1 class="hero-title"
-            data-en="Itishree Portfolio"
-            data-or="ଇତିଶ୍ରୀ ପୋର୍ଟଫୋଲିଓ">Itishree Portfolio</h1>
+            data-en="Subha Sambandha"
+            data-or="ଶୁଭ ସମ୍ବନ୍ଧ">Subha Sambandha</h1>
         <div class="divider">
           <span class="divider-icon"><i class="bi bi-flower1"></i></span>
         </div>
         <p class="hero-subtitle"
-           data-en="A Sacred Beginning of a Lifelong Journey"
-           data-or="ଜୀବନର ଏକ ପବିତ୍ର ଯାତ୍ରାର ଶୁଭ ଆରମ୍ଭ">A Sacred Beginning of a Lifelong Journey</p>
+           data-en="An Auspicious Bond — A Sacred Beginning of a Lifelong Journey"
+           data-or="ଏକ ଶୁଭ ବନ୍ଧନ — ଜୀବନର ଏକ ପବିତ୍ର ଯାତ୍ରାର ଆରମ୍ଭ">An Auspicious Bond — A Sacred Beginning of a Lifelong Journey</p>
       </section>
 
       <!-- ============ PROFILE CARD ============ -->
@@ -79,11 +136,20 @@
           <div class="col-lg-5 text-center">
             <div class="photo-frame">
               <div class="photo-frame-inner">
-                <img
-                  src="images/profile.png"
-                  alt="Itishree Lenka"
-                  class="profile-photo"
-                />
+                <!-- Photo slider (auto right-to-left) -->
+                <div class="photo-slider" id="photoSlider">
+                  <div class="photo-slide active" data-index="0">
+                    <img src="images/profile.png" alt="Itishree Lenka" class="profile-photo" />
+                  </div>
+                  <div class="photo-slide" data-index="1">
+                    <img src="images/profile-2.png" alt="Itishree Lenka" class="profile-photo" />
+                  </div>
+                </div>
+                <!-- Slider dots -->
+                <div class="photo-dots" id="photoDots">
+                  <button type="button" class="photo-dot active" data-index="0" aria-label="Photo 1"></button>
+                  <button type="button" class="photo-dot" data-index="1" aria-label="Photo 2"></button>
+                </div>
               </div>
               <div class="photo-corner photo-corner-tl"></div>
               <div class="photo-corner photo-corner-tr"></div>
