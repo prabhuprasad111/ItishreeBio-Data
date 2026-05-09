@@ -77,18 +77,30 @@
       <button type="button" class="lang-btn" data-lang="or">ଓଡ଼ିଆ</button>
     </div>
 
-    <!-- Download Biodata as PDF (direct download, no print dialog) -->
-    <button
-      id="downloadBtn"
-      class="btn btn-action"
-      type="button"
-      data-en-title="Download Biodata as PDF"
-      data-or-title="ବାୟୋଡାଟା PDF ଡାଉନଲୋଡ କରନ୍ତୁ"
-      title="Download Biodata as PDF"
-    >
-      <i class="bi bi-download"></i>
-      <span data-en="Download" data-or="ଡାଉନଲୋଡ">Download</span>
-    </button>
+    <!-- Download dropdown -->
+    <div class="dropdown">
+      <button
+        class="btn btn-action dropdown-toggle"
+        type="button"
+        id="downloadDropdown"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        data-en-title="Download Biodata as PDF"
+        data-or-title="ବାୟୋଡାଟା PDF ଡାଉନଲୋଡ କରନ୍ତୁ"
+        title="Download Biodata as PDF"
+      >
+        <i class="bi bi-download"></i>
+        <span data-en="Download" data-or="ଡାଉନଲୋଡ">Download</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end download-menu" aria-labelledby="downloadDropdown">
+        <li>
+          <button class="dropdown-item" type="button" data-pdf-lang="en">
+            <i class="bi bi-file-earmark-pdf-fill"></i>
+            <span data-en="English Biodata (PDF)" data-or="ଇଂରାଜୀ ବାୟୋଡାଟା (PDF)">English Biodata (PDF)</span>
+          </button>
+        </li>
+      </ul>
+    </div>
   </div>
 
   <main class="portfolio-wrapper">
@@ -393,8 +405,6 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- html2pdf for direct PDF download (no print dialog) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <!-- Custom JS -->
   <script src="js/script.js"></script>
 </body>
